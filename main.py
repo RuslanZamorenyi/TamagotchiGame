@@ -38,7 +38,7 @@ class Animal:
                 sys.exit("Health is over, your animal died")
         elif self.food <= 0:
             self.health -= 40
-            print("Your levels food=", self.food, "and health=", self.health)
+        print("Your levels food=", self.food, "and health=", self.health)
         return self.food, self.health
 
     def level_water(self):
@@ -72,7 +72,7 @@ class Animal:
         elif self.sleep <= 0:
             self.health -= 40
         print("Your levels tired=", self.sleep, "and health=", self.health)
-        return self.water, self.health
+        return self.sleep, self.health
 
     def start_play(self):
         while True:
@@ -95,13 +95,14 @@ class Animal:
                     break
                 case _:
                     print("Please write from topic")
+        return answer
 
 
 user = Animal(70, 70, 70, 70, 70)
 th1 = Thread(target=user.start_play)
 th1.start()
 while True:
-    time.sleep(1800)
+    time.sleep(3)
     user.time_work()
     if user.start_play != True:
         break
